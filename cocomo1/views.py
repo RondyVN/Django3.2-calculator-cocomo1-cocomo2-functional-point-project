@@ -1,7 +1,10 @@
 from django.shortcuts import render
 import re
 
-def hello(request):
+def links_calculator(request):
+    return render(request, 'cocomo1/link_calculator.html')
+
+def cocomo1_links(request):
     return render(request, 'cocomo1/cocomo_start.html')
 
 def basic_cocomo(request):
