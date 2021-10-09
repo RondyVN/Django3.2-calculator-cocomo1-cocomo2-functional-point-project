@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Basic calculator</h1>
+    <form method="get">
+        <p>Organic: <input type="radio" name="basic" value="organic"></p>
+        <p>Semi distributed: <input type="radio" name="basic" value="semi_distributed"></p>
+        <p>Built in<input type="radio" name="basic" value="built_in"></p>
+        <p></p><input type="number" name="rows">
+        <input type="submit" value="Calculate">
+    </form>
+
+    <h3>Трудоємкість: {{ PM }}</h3>
+    <h3>Час розробки в календарних місяцях: {{ TM }}</h3>
+    <h3>Середня чисельність персоналу: {{ SS }}</h3>
+    <h3>Продуктивність: {{ P }}</h3>
+</body>
+</html>
