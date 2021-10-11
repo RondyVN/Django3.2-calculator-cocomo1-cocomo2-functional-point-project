@@ -25,4 +25,5 @@ urlpatterns = [
     path('cocomo_1_links/basic_cocomo/', views.basic_cocomo, name="basic_cocomo"),
     path('cocomo_1_links/intermediate_cocomo/', views.intermediate_cocomo, name='intermediate_cocomo'),
     path('cocomo2/', include('cocomo2.urls'),),
+    path('functional_points/', include('functional_points.urls'),),
 ]

@@ -101,10 +101,6 @@ def detailed_assessment(request):
         'TOOL': ['Very Low 1.17', 'Low 1.09', 'Nominal 1.00', 'Hight 0.90', 'Very High 0.78', 'Extra High n/a'],
         'SITE': ['Very Low 1.22', 'Low 1.09', 'Nominal 1.00', 'Hight 0.93', 'Very High 0.86', 'Extra High 0.80'],
         'SCED': ['Very Low 1.43', 'Low 1.14', 'Nominal 1.00', 'Hight 1.00', 'Very High 1.00', 'Extra High n/a'],
-
-
-
-
     }
 
     name_atributs_dict = {

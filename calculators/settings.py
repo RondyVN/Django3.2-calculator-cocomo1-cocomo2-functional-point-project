@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cocomo1',
     'cocomo2',
+    'functional_points',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Hello</h1>
+
+    <form method="get">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Measure</td>
+                    <td>Simple</td>
+                    <td>Average</td>
+                    <td>Complex</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, val in dict_input.items %}
+                    <tr>
+                        <td>{% for k, v in name.items %} {% if key == k %} {{ v }} {% endif %} {% endfor %}</td>
+                        {% for v in val %}
+                        <td>
+                            <input type="number" name="{{ v }}">
+                        </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <input type="submit" value="send">
+    </form>
+
+    {{ num }}
+</body>
+</html>
