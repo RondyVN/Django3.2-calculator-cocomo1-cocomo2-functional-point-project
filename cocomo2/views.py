@@ -6,6 +6,8 @@ def cocomo2_start(request):
 
 def preliminary_assessment(request):
 
+    name_calcuator = 'Cocomo 2 Для попередньої оцінки'
+
     count_rows = request.GET.get('rows')
 
     dictt = {
@@ -64,13 +66,14 @@ def preliminary_assessment(request):
                 count_iter_list_data += 1
             E = 0.91 + 0.01 * SF
             PM = EAF * 2.94 * int(count_rows)**E
-            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
+            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
         else:
-            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
+            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
     except:
-        return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
+        return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
 
 def detailed_assessment(request):
+    name_calcuator = 'Cocomo 2 Для детальної оцінки'
 
     count_rows = request.GET.get('rows')
 
@@ -155,11 +158,11 @@ def detailed_assessment(request):
                 count_iter_list_data += 1
             E = 0.91 + 0.01 * SF
             PM = EAF * 2.45 * int(count_rows)**E
-            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
+            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
         else:
-            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
+            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
     except:
-        return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'arr': list_data_inter, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
+        return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
 
 
 

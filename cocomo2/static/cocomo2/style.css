@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

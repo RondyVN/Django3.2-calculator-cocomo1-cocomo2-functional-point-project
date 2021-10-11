@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.links_calculator, name="links_calculator"),
     path('cocomo_1_links/', views.cocomo1_links, name="cocomo1_links"),
-    path('basic_cocomo/', views.basic_cocomo, name="basic_cocomo"),
-    path('intermediate_cocomo/', views.intermediate_cocomo, name='intermediate_cocomo'),
+    path('cocomo_1_links/basic_cocomo/', views.basic_cocomo, name="basic_cocomo"),
+    path('cocomo_1_links/intermediate_cocomo/', views.intermediate_cocomo, name='intermediate_cocomo'),
     path('cocomo2/', include('cocomo2.urls'),),
 ]
