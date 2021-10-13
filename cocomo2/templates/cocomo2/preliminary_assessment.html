@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<a href="{% url 'cocomo2:cocomo2_start' %}" class="btn btn-outline-dark"><< Назад</a>
 <div class="wrapper">
     <form method="get" class="form">
         <h1>{{ cocomo2 }}</h1>
@@ -43,6 +43,7 @@
     </form>
 </div>
 
+{{ list }}
 <p>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

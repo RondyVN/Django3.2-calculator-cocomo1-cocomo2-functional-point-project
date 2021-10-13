@@ -15,7 +15,8 @@ def preliminary_assessment(request):
         'FLEX': ['Very Low 5.07', 'Low 4.05', 'Nominal 3.04', 'Hight 2.03', 'Very High 1.01', 'Extra High 0.00'],
         'RESL': ['Very Low 7.07', 'Low 5.56', 'Nominal 4.24', 'Hight 2.83', 'Very High 1.41', 'Extra High 0.00'],
         'TEAM': ['Very Low 5.48', 'Low 4.38', 'Nominal 3.29', 'Hight 2.19', 'Very High 1.10', 'Extra High 0.00'],
-        'PMAT': ['Very Low 7.80', 'Low 6.24', 'Nominal 4.68', 'Hight 3.12', 'Very High 1.56', 'Extra High 0.00'],
+        'PMAT': ['Very Low 7.80', 'Low 6.24', 'Nominal 4.86', 'Hight 3.12', 'Very High 1.56', 'Extra High 0.00'],
+
         'PERS': ['Extra low 2.12', 'Very Low 1.62', 'Low 1.26', 'Nominal 1.00', 'Hight 0.83', 'Very High 0.63', 'Extra High 0.50'],
         'PREX': ['Extra low 1.59', 'Very Low 1.33', 'Low 1.22', 'Nominal 1.00', 'Hight 0.87', 'Very High 0.74', 'Extra High 0.62'],
         'RCPX': ['Extra low 0.49', 'Very Low 0.60', 'Low 0.83', 'Nominal 1.00', 'Hight 1.33', 'Very High 1.91', 'Extra High 2.72'],
@@ -66,7 +67,7 @@ def preliminary_assessment(request):
                 count_iter_list_data += 1
             E = 0.91 + 0.01 * SF
             PM = EAF * 2.94 * int(count_rows)**E
-            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
+            return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght, 'list': list_data_inter})
         else:
             return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
     except:
@@ -82,7 +83,7 @@ def detailed_assessment(request):
         'FLEX': ['Very Low 5.07', 'Low 4.05', 'Nominal 3.04', 'Hight 2.03', 'Very High 1.01', 'Extra High 0.00'],
         'RESL': ['Very Low 7.07', 'Low 5.56', 'Nominal 4.24', 'Hight 2.83', 'Very High 1.41', 'Extra High 0.00'],
         'TEAM': ['Very Low 5.48', 'Low 4.38', 'Nominal 3.29', 'Hight 2.19', 'Very High 1.10', 'Extra High 0.00'],
-        'PMAT': ['Very Low 7.80', 'Low 6.24', 'Nominal 4.68', 'Hight 3.12', 'Very High 1.56', 'Extra High 0.00'],
+        'PMAT': ['Very Low 7.80', 'Low 6.24', 'Nominal 4.86', 'Hight 3.12', 'Very High 1.56', 'Extra High 0.00'],
 
         'ACAP': ['Very Low 1.42', 'Low 1.29', 'Nominal 1.00', 'Hight 0.85', 'Very High 0.71', 'Extra High n/a'],
         'AEXP': ['Very Low 1.22', 'Low 1.10', 'Nominal 1.00', 'Hight 0.88', 'Very High 0.81', 'Extra High n/a'],
@@ -153,7 +154,7 @@ def detailed_assessment(request):
                         EAF = EAF * a
                 count_iter_list_data += 1
             E = 0.91 + 0.01 * SF
-            PM = EAF * 2.45 * int(count_rows)**E
+            PM = EAF * 2.45 * (int(count_rows)**E)
             return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': PM, 'len': lenght})
         else:
             return render(request, 'cocomo2/preliminary_assessment.html', {'dict': dictt, 'cocomo2': name_calcuator, 'name_atribut': name_atributs_dict, 'PM': 'Введіть к-ть рядків коду'})
